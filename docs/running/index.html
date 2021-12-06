@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/docs/running/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-11-02T09:20:57+01:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2021-12-03T16:59:38+09:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="Running gcpdiag">
 <meta itemprop=description content="Prerequisites and how run gcpdiag.
 ">
-<meta itemprop=dateModified content="2021-11-02T09:20:57+01:00">
-<meta itemprop=wordCount content="181"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2021-12-03T16:59:38+09:00">
+<meta itemprop=wordCount content="183"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="Running gcpdiag">
@@ -149,14 +149,14 @@ or use the <code>gcloud</code> CLI.</p>
     cloudresourcemanager.googleapis.com
 </code></pre><h2 id=running-with-docker>Running with Docker</h2>
 <p>You can run gcpdiag using a shell wrapper that starts gcpdiag in a Docker
-container. This should work on any machine with Docker installed, including
-Cloud Shell.</p>
+container. This should work on any machine with Docker or Podman installed,
+including Cloud Shell.</p>
 <pre tabindex=0><code>curl https://gcpdiag.dev/gcpdiag.sh &gt;gcpdiag
 chmod +x gcpdiag
 ./gcpdiag lint --project=MYPROJECT
 </code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 2, 2021: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/51fb977642725a92b627010a1015a3c39940acee>Use OAuth authentication by default. (51fb977)</a>
+Last modified December 3, 2021: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/fb84af11e736a87862f21691368f191797d61ecd>Mention Podman is supported in doc (fb84af1)</a>
 </div>
 </div>
 </main>
