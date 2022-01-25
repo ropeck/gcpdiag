@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/dataproc/BP/2021_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-01-21T10:46:13+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-01-18T12:37:19+01:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="dataproc/BP/2021_001">
 <meta itemprop=description content="Stackdriver Logging is enabled in the cluster
 ">
-<meta itemprop=dateModified content="2022-01-21T10:46:13+00:00">
-<meta itemprop=wordCount content="122"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-01-18T12:37:19+01:00">
+<meta itemprop=wordCount content="121"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="dataproc/BP/2021_001">
@@ -251,6 +251,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkeerr2022_001-li>
 <input type=checkbox id=m-rulesgkeerr2022_001-check>
 <label for=m-rulesgkeerr2022_001-check><a href=/rules/gke/ERR/2022_001/ title=gke/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkeerr2022_001><span>ERR/2022_001</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkeerr2022_002-li>
+<input type=checkbox id=m-rulesgkeerr2022_002-check>
+<label for=m-rulesgkeerr2022_002-check><a href=/rules/gke/ERR/2022_002/ title=gke/ERR/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkeerr2022_002><span>ERR/2022_002</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkesec2021_001-li>
 <input type=checkbox id=m-rulesgkesec2021_001-check>
 <label for=m-rulesgkesec2021_001-check><a href=/rules/gke/SEC/2021_001/ title=gke/SEC/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkesec2021_001><span>SEC/2021_001</span></a></label>
@@ -336,9 +339,11 @@
 <h3 id=remediation>Remediation</h3>
 <p>dataproc.logging.stackdriver.enable is enabled by default when a cluster is created. If you disabled this during cluster creation by setting the above property to false, please create create a new clsuter without this property.</p>
 <h3 id=further-information>Further information</h3>
-<p><a href=https://cloud.google.com/dataproc/docs/guides/logging#accessing_cluster_logs_in>Accessing cluster logs in Cloud Logging</a></p>
+<ul>
+<li><a href=https://cloud.google.com/dataproc/docs/guides/logging#job_logs_in>Dataproc job logs in Logging</a></li>
+</ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 21, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/bf16ff14fa440f3b4e63e672868ed21b64049b41>Merge "Fix BP for stackdriver logging" -- Branch commit log -- commit e74c0e714b70dc6bfa475efacfbd6222a15cec01 Author: gcpdiag team &lt;noreply@google.com> Date: 2022-01-18T17:45:34Z (bf16ff1)</a>
+Last modified January 18, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dfac3df2ff590c25e88dd20568819e978ea4f278>Private clusters must have private google access enabled in subnet (dfac3df)</a>
 </div>
 </div>
 </main>

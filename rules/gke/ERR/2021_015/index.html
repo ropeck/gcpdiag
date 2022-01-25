@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/gke/ERR/2021_015/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2021-12-16T17:45:51+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-01-18T12:37:19+01:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gke/ERR/2021_015">
 <meta itemprop=description content="GKE connectivity: node to pod communication.
 ">
-<meta itemprop=dateModified content="2021-12-16T17:45:51+00:00">
-<meta itemprop=wordCount content="133"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-01-18T12:37:19+01:00">
+<meta itemprop=wordCount content="132"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="gke/ERR/2021_015">
@@ -251,6 +251,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkeerr2022_001-li>
 <input type=checkbox id=m-rulesgkeerr2022_001-check>
 <label for=m-rulesgkeerr2022_001-check><a href=/rules/gke/ERR/2022_001/ title=gke/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkeerr2022_001><span>ERR/2022_001</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkeerr2022_002-li>
+<input type=checkbox id=m-rulesgkeerr2022_002-check>
+<label for=m-rulesgkeerr2022_002-check><a href=/rules/gke/ERR/2022_002/ title=gke/ERR/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkeerr2022_002><span>ERR/2022_002</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkesec2021_001-li>
 <input type=checkbox id=m-rulesgkesec2021_001-check>
 <label for=m-rulesgkesec2021_001-check><a href=/rules/gke/SEC/2021_001/ title=gke/SEC/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkesec2021_001><span>SEC/2021_001</span></a></label>
@@ -331,8 +334,8 @@
 <p><strong>Product</strong>: <a href=https://cloud.google.com/kubernetes-engine>Google Kubernetes Engine</a><br>
 <strong>Rule class</strong>: ERR - Something that is very likely to be wrong</p>
 <h3 id=description>Description</h3>
-<p>Agents and host-network pods from a node must be able to communicate with with
-all pods on all nodes.</p>
+<p>Agents and host-network pods from a node must be able to communicate with all
+pods on all nodes.</p>
 <p>The GKE control plane automatically creates a firewall rule called
 <code>gke-[cluster-name]-[cluster-hash]-vms</code> to allow these connections, but if the
 connections get blocked, the following could be the reason:</p>
@@ -351,7 +354,7 @@ rule or policy.</p>
 <li><a href=https://cloud.google.com/kubernetes-engine/docs/concepts/firewall-rules>Automatically created firewall rules</a></li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified December 16, 2021: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/3069633d7739d307165a9d571f159ce883018587>Merge "GKE connectivity rules." -- Branch commit log -- commit 5e95cc929f5916d61e67d15b2d0a1a5dfc96e9e4 Author: David Schweikert &lt;dwes@google.com> Date: 2021-12-14T16:55:28+01:00 (3069633)</a>
+Last modified January 18, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dfac3df2ff590c25e88dd20568819e978ea4f278>Private clusters must have private google access enabled in subnet (dfac3df)</a>
 </div>
 </div>
 </main>
