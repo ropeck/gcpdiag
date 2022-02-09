@@ -21,11 +21,11 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/docs/development/architecture/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-10-20T22:14:24+02:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-02-09T10:13:23+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gcpdiag Architecture">
 <meta itemprop=description content="gcpdiag internal code architecture.
 ">
-<meta itemprop=dateModified content="2021-10-20T22:14:24+02:00">
+<meta itemprop=dateModified content="2022-02-09T10:13:23+00:00">
 <meta itemprop=wordCount content="1715"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
@@ -172,9 +172,9 @@ resource in GCP and must have these three methods:</p>
 <ul>
 <li><code>project_id</code> (property)</li>
 <li><code>full_path</code> (property) - returns the full path of this resource (e.g.:
-<code>projects/gcpd-gke-1-9b90/zones/europe-west4-a/clusters/gke1</code>)</li>
+<code>projects/gcpdiag-gke-1-9b90/zones/europe-west4-a/clusters/gke1</code>)</li>
 <li><code>short_path</code> (property) - returns the short name for this resource (e.g.:
-<code>gcpd-gke-1-9b90/europe-west4-a/gke1</code>)</li>
+<code>gcpdiag-gke-1-9b90/europe-west4-a/gke1</code>)</li>
 </ul>
 <p>Queries modules provide functions that generally require as input a <code>Context</code>
 object and return a dictionary or list of <code>Resource</code>. It is the responsibility
@@ -375,7 +375,7 @@ gcloud command-line) or with a key file for a service account.</p>
 function is used to retrieve the API interface and also takes care of doing any
 necessary authentication step.</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified October 20, 2021: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/79be776a3363fbeecf157a0673311e42eb1669a8>initial site, using docsy template (79be776)</a>
+Last modified February 9, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dab2d479b401a8081b27bc97ee4de19a8c526886>Merge "Unify test project naming" -- Branch commit log -- commit bde1226b453e6376715eae5ea5d37ae1c35e64a5 Author: Dawid Malinowski &lt;dawidmalina@google.com> Date: 2022-02-08T22:54:37+01:00 (dab2d47)</a>
 </div>
 </div>
 </main>
