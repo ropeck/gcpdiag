@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/docs/usage/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-03-13T16:29:24+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-03-14T12:10:56+01:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="Usage information">
 <meta itemprop=description content="gcpdiag command-line usage
 ">
-<meta itemprop=dateModified content="2022-03-13T16:29:24+00:00">
-<meta itemprop=wordCount content="218"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-03-14T12:10:56+01:00">
+<meta itemprop=wordCount content="368"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="Usage information">
@@ -105,6 +105,17 @@
 </div>
 </aside>
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li><a href=#command-line-options>Command Line Options</a></li>
+<li><a href=#configuration-file>Configuration File</a>
+<ul>
+<li><a href=#example-configuration-which-will-be-applied-to-any-projects>Example configuration which will be applied to any projects</a></li>
+<li><a href=#example-configuration-which-will-be-applied-to-specific-project>Example configuration which will be applied to specific project</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
 <a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/docs/usage.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
 <a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=Usage%20information" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
@@ -116,6 +127,7 @@
 <div class=lead>gcpdiag command-line usage</div>
 <header class=article-meta>
 </header>
+<h2 id=command-line-options>Command Line Options</h2>
 <p>Currently gcpdiag mainly supports one subcommand: <code>lint</code>, which is used
 to run diagnostics on one or more GCP projects.</p>
 <pre tabindex=0><code>usage: gcpdiag lint --project P [OPTIONS]
@@ -147,9 +159,41 @@ optional arguments:
                         Configure max entries to fetch by logging queries (default: 10000)
   --logging-fetch-max-time-seconds S
                         Configure timeout for logging queries (default: 120 seconds)
-</code></pre>
+</code></pre><h2 id=configuration-file>Configuration File</h2>
+<p>The configuration for the gcpdiag run can be provided as a local configuration file via the <code>--config path/to/file</code> CLI flag written in YAML format.</p>
+<p>If a value is provided on both the command line and via a configuration file, the values from the configuration file will be preferred.</p>
+<h3 id=example-configuration-which-will-be-applied-to-any-projects>Example configuration which will be applied to any projects</h3>
+<pre tabindex=0><code>---
+billing_project: sample
+include:
+- '*BP*'
+exclude:
+- '*SEC*'
+- '*ERR*'
+include_extended: True
+verbose: 3
+within_days: 5
+</code></pre><h3 id=example-configuration-which-will-be-applied-to-specific-project>Example configuration which will be applied to specific project</h3>
+<pre tabindex=0><code>---
+logging_fetch_max_time_seconds: 300
+verbose: 3
+within_days: 5
+
+projects:
+  myproject:
+    billing_project: perproject
+    include:
+    - '*BP*'
+    exclude:
+    - '*SEC*'
+    - '*ERR*'
+    include_extended: True
+</code></pre><p>If values are provided via a configuration file for any projects and specific project, the values from the configuration defined to specific project will be preferred.</p>
+<blockquote>
+<p>All values are supported (except <code>--project</code> and <code>-config</code>) and function identically to their CLI counterparts.</p>
+</blockquote>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified March 13, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dc2d39b66f9b46d49d056a8e9afffb49af606595>Merge "Implement support for configuration file written in YAML" -- Branch commit log -- commit bee75a77395848e8bf9665a85bd855364b88f624 Author: Dawid Malinowski &lt;dawidmalina@google.com> Date: 2022-03-03T09:23:31+01:00 (dc2d39b)</a>
+Last modified March 14, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/7a4ec4aab9e632877f6a22bd5c0d12ac63901f8f>Extend usage docs (7a4ec4a)</a>
 </div>
 </div>
 </main>
