@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/docs/usage/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-03-14T12:10:56+01:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-04-26T08:06:47+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="Usage information">
 <meta itemprop=description content="gcpdiag command-line usage
 ">
-<meta itemprop=dateModified content="2022-03-14T12:10:56+01:00">
-<meta itemprop=wordCount content="368"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-04-26T08:06:47+00:00">
+<meta itemprop=wordCount content="808"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="Usage information">
@@ -114,6 +114,13 @@
 <li><a href=#example-configuration-which-will-be-applied-to-specific-project>Example configuration which will be applied to specific project</a></li>
 </ul>
 </li>
+<li><a href=#output-formats>Output formats</a>
+<ul>
+<li><a href=#example-of-the-terminal-default-output-format>Example of the terminal (default) output format</a></li>
+<li><a href=#example-of-the-json-output-format>Example of the json output format</a></li>
+<li><a href=#example-of-the-csv-output-format>Example of the csv output format</a></li>
+</ul>
+</li>
 </ul>
 </nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
@@ -159,6 +166,7 @@ optional arguments:
                         Configure max entries to fetch by logging queries (default: 10000)
   --logging-fetch-max-time-seconds S
                         Configure timeout for logging queries (default: 120 seconds)
+  --output FORMATTER    Format output as one of [terminal, json, csv] (default: terminal)
 </code></pre><h2 id=configuration-file>Configuration File</h2>
 <p>The configuration for the gcpdiag run can be provided as a local configuration file via the <code>--config path/to/file</code> CLI flag written in YAML format.</p>
 <p>If a value is provided on both the command line and via a configuration file, the values from the configuration file will be preferred.</p>
@@ -192,8 +200,103 @@ projects:
 <blockquote>
 <p>All values are supported (except <code>--project</code> and <code>-config</code>) and function identically to their CLI counterparts.</p>
 </blockquote>
+<h2 id=output-formats>Output formats</h2>
+<p>The output format for the gcpdiag run can be configured via <code>--output formatter</code> CLI flag, where <code>formatter</code> can be one of the following options:</p>
+<ul>
+<li><code>terminal</code> - which is default output format designed to be human readable</li>
+<li><code>json</code> - can be helpful as a machine readable format used for example with CI/CD pipelines</li>
+<li><code>csv</code> - can be helpful as a machine readable format used for example with analytic tools</li>
+</ul>
+<p>Final report can be easily streamed to file by using file redirection. Result will contain only a report of the lint execution with configured output format.</p>
+<p>For example:</p>
+<pre tabindex=0><code>gcpdiag lint --project example-project --output csv &gt; gcpdiag.report.csv
+</code></pre><p>will generate file <code>gcpdiag.report.csv</code> with following content:</p>
+<pre tabindex=0><code>rule,resource,status,message,doc_url
+gcs/BP/2022_001,b/example-project/artifacts.example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+gcs/BP/2022_001,b/example-project/example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+gcs/BP/2022_001,b/example-project/staging.example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+iam/SEC/2021_001,projects/example-project,OK,-,https://gcpdiag.dev/rules/iam/SEC/2021_001
+</code></pre><blockquote>
+<p>Value can be also provided as a yaml configuration file via the <code>--config path/to/file</code> CLI flag.</p>
+</blockquote>
+<h3 id=example-of-the-terminal-default-output-format>Example of the terminal (default) output format</h3>
+<pre tabindex=0><code>gcpdiag 🩺 0.54-test
+
+Starting lint inspection (project: example-project)...
+
+🔎 gcs/BP/2022_001: Buckets are using uniform access
+   - example-project/artifacts.example-project.appspot.com        [FAIL]
+     it is recommend to use uniform access on your bucket
+   - example-project/example-project.appspot.com                  [FAIL]
+     it is recommend to use uniform access on your bucket
+   - example-project/staging.example-project.appspot.com          [FAIL]
+     it is recommend to use uniform access on your bucket
+
+   Google recommends using uniform access for a Cloud Storage bucket IAM policy
+   https://cloud.google.com/storage/docs/access-
+   control#choose_between_uniform_and_fine-grained_access
+
+   https://gcpdiag.dev/rules/gcs/BP/2022_001
+
+🔎 iam/SEC/2021_001: No service accounts have the Owner role
+   - example-project                                                  [ OK ]
+
+Rules summary: 64 skipped, 1 ok, 1 failed
+How good were the results? https://forms.gle/jG1dUdkxhP2s5ced6
+</code></pre><h3 id=example-of-the-json-output-format>Example of the json output format</h3>
+<pre tabindex=0><code>gcpdiag 0.54-test
+
+Starting lint inspection (project: example-project)...
+
+[
+{
+  &quot;rule&quot;: &quot;gcs/BP/2022_001&quot;,
+  &quot;resource&quot;: &quot;b/artifacts.example-project.appspot.com&quot;,
+  &quot;status&quot;: &quot;FAIL&quot;,
+  &quot;message&quot;: &quot;it is recommend to use uniform access on your bucket&quot;,
+  &quot;doc_url&quot;: &quot;https://gcpdiag.dev/rules/gcs/BP/2022_001&quot;
+},
+{
+  &quot;rule&quot;: &quot;gcs/BP/2022_001&quot;,
+  &quot;resource&quot;: &quot;b/example-project.appspot.com&quot;,
+  &quot;status&quot;: &quot;FAIL&quot;,
+  &quot;message&quot;: &quot;it is recommend to use uniform access on your bucket&quot;,
+  &quot;doc_url&quot;: &quot;https://gcpdiag.dev/rules/gcs/BP/2022_001&quot;
+},
+{
+  &quot;rule&quot;: &quot;gcs/BP/2022_001&quot;,
+  &quot;resource&quot;: &quot;b/staging.example-project.appspot.com&quot;,
+  &quot;status&quot;: &quot;FAIL&quot;,
+  &quot;message&quot;: &quot;it is recommend to use uniform access on your bucket&quot;,
+  &quot;doc_url&quot;: &quot;https://gcpdiag.dev/rules/gcs/BP/2022_001&quot;
+},
+{
+  &quot;rule&quot;: &quot;iam/SEC/2021_001&quot;,
+  &quot;resource&quot;: &quot;projects/example-project&quot;,
+  &quot;status&quot;: &quot;OK&quot;,
+  &quot;message&quot;: &quot;-&quot;,
+  &quot;doc_url&quot;: &quot;https://gcpdiag.dev/rules/iam/SEC/2021_001&quot;
+},
+]
+
+Rules summary: 64 skipped, 1 ok, 1 failed
+How good were the results? https://forms.gle/jG1dUdkxhP2s5ced6
+</code></pre><h3 id=example-of-the-csv-output-format>Example of the csv output format</h3>
+<pre tabindex=0><code>gcpdiag 0.54-test
+
+Starting lint inspection (project: example-project)...
+
+rule,resource,status,message,doc_url
+gcs/BP/2022_001,b/artifacts.example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+gcs/BP/2022_001,b/example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+gcs/BP/2022_001,b/staging.example-project.appspot.com,FAIL,it is recommend to use uniform access on your bucket,https://gcpdiag.dev/rules/gcs/BP/2022_001
+iam/SEC/2021_001,projects/example-project,OK,-,https://gcpdiag.dev/rules/iam/SEC/2021_001
+
+Rules summary: 64 skipped, 1 ok, 1 failed
+How good were the results? https://forms.gle/jG1dUdkxhP2s5ced6
+</code></pre>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified March 14, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/7a4ec4aab9e632877f6a22bd5c0d12ac63901f8f>Extend usage docs (7a4ec4a)</a>
+Last modified April 26, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/364121a85f197c80dcb7fc064610f468564049fe>Merge "Add support for multiple output formats" -- Branch commit log -- commit 22d9dd70865ab91fd1d30a8d5b745458839a22b0 Author: Dawid Malinowski &lt;dawidmalina@google.com> Date: 2022-04-21T18:05:31+02:00 (364121a)</a>
 </div>
 </div>
 </main>
