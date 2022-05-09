@@ -13,21 +13,29 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>APIGEE | gcpdiag</title>
-<meta name=description content="Apigee API Management">
-<meta property="og:title" content="APIGEE">
-<meta property="og:description" content="Apigee API Management">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://gcpdiag.dev/rules/apigee/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="og:site_name" content="gcpdiag">
-<meta itemprop=name content="APIGEE">
-<meta itemprop=description content="Apigee API Management"><meta name=twitter:card content="summary_large_image">
+<title>gce/WARN/2022_004 | gcpdiag</title>
+<meta name=description content="Cloud SQL Docker bridge network should be avoided.
+">
+<meta property="og:title" content="gce/WARN/2022_004">
+<meta property="og:description" content="Cloud SQL Docker bridge network should be avoided.
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gcpdiag.dev/rules/gce/WARN/2022_004/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
+<meta property="article:modified_time" content="2022-05-09T12:54:19+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta itemprop=name content="gce/WARN/2022_004">
+<meta itemprop=description content="Cloud SQL Docker bridge network should be avoided.
+">
+<meta itemprop=dateModified content="2022-05-09T12:54:19+00:00">
+<meta itemprop=wordCount content="66"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
-<meta name=twitter:title content="APIGEE">
-<meta name=twitter:description content="Apigee API Management">
+<meta name=twitter:title content="gce/WARN/2022_004">
+<meta name=twitter:description content="Cloud SQL Docker bridge network should be avoided.
+">
 <link href=/scss/main.css rel=stylesheet>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 </head>
-<body class=td-section>
+<body class=td-page>
 <header>
 <nav class="js-navbar-scroll navbar navbar-expand navbar-light nav-shadow flex-column flex-md-row td-navbar">
 <a id=gcpdiag-top class=navbar-brand href=/>
@@ -68,9 +76,9 @@
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rules-li>
 <a href=/rules/ title="Lint Rules" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-rules><span>Rules</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesapigee-li>
-<input type=checkbox id=m-rulesapigee-check checked>
-<label for=m-rulesapigee-check><a href=/rules/apigee/ title=APIGEE class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-rulesapigee><span class=td-sidebar-nav-active-item>apigee</span></a></label>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesapigee-li>
+<input type=checkbox id=m-rulesapigee-check>
+<label for=m-rulesapigee-check><a href=/rules/apigee/ title=APIGEE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesapigee><span>apigee</span></a></label>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesapigeeerr2022_001-li>
 <input type=checkbox id=m-rulesapigeeerr2022_001-check>
@@ -137,8 +145,8 @@
 <label for=m-rulesgcberr2022_002-check><a href=/rules/gcb/ERR/2022_002/ title=gcb/ERR/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcberr2022_002><span>ERR/2022_002</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgce-li>
-<input type=checkbox id=m-rulesgce-check>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesgce-li>
+<input type=checkbox id=m-rulesgce-check checked>
 <label for=m-rulesgce-check><a href=/rules/gce/ title=GCE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgce><span>gce</span></a></label>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcebp2021_001-li>
@@ -198,9 +206,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcewarn2022_003-li>
 <input type=checkbox id=m-rulesgcewarn2022_003-check>
 <label for=m-rulesgcewarn2022_003-check><a href=/rules/gce/WARN/2022_003/ title=gce/WARN/2022_003 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcewarn2022_003><span>WARN/2022_003</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcewarn2022_004-li>
-<input type=checkbox id=m-rulesgcewarn2022_004-check>
-<label for=m-rulesgcewarn2022_004-check><a href=/rules/gce/WARN/2022_004/ title=gce/WARN/2022_004 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcewarn2022_004><span>WARN/2022_004</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-rulesgcewarn2022_004-li>
+<input type=checkbox id=m-rulesgcewarn2022_004-check checked>
+<label for=m-rulesgcewarn2022_004-check><a href=/rules/gce/WARN/2022_004/ title=gce/WARN/2022_004 class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-rulesgcewarn2022_004><span class=td-sidebar-nav-active-item>WARN/2022_004</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgcf-li>
@@ -355,34 +363,43 @@
 </div>
 </aside>
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#description>Description</a></li>
+<li><a href=#remediation>Remediation</a></li>
+<li><a href=#further-information>Further information</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
-<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/apigee/_index.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=APIGEE" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
+<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/gce/WARN/2022_004.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=gce/WARN/2022_004" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
 </div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>APIGEE</h1>
-<div class=lead>Apigee API Management</div>
+<h1>gce/WARN/2022_004</h1>
+<div class=lead>Cloud SQL Docker bridge network should be avoided.</div>
 <header class=article-meta>
 </header>
-<div class=section-index>
-<hr class=panel-line>
-<div class=entry>
-<h5>
-<a href=/rules/apigee/ERR/2022_001/>apigee/ERR/2022_001</a>
-</h5>
-<p></p>
-</div>
-<div class=entry>
-<h5>
-<a href=/rules/apigee/WARN/2021_001/>apigee/WARN/2021_001</a>
-</h5>
-<p></p>
-</div>
-</div>
+<p><strong>Product</strong>: <a href=https://cloud.google.com/compute>Compute Engine</a><br>
+<strong>Rule class</strong>: WARN - Something that is possibly wrong</p>
+<h3 id=description>Description</h3>
+<p>The IP range 172.17.0.0/16 is reserved for the Docker bridge network.
+Connections from any IP within that range to Cloud SQL instances using private
+IP fail.</p>
+<h3 id=remediation>Remediation</h3>
+<p>Make sure that you do not use Docker bridge network for instances that need to
+access Cloud SQL via private ip.</p>
+<h3 id=further-information>Further information</h3>
+<ul>
+<li><a href=https://cloud.google.com/sql/docs/mysql/configure-private-ip>Configure private IP</a></li>
+</ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 8, 2021: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/ae00455c9c1c76c05bfc1294d83aa82032fc4088>Merge "new product: Apigee integration b/193733957" -- Branch commit log -- commit 1d4134e3f649c7811a34b3a9b698e141d734c08d Author: gcpdiag team &lt;noreply@google.com> Date: 2021-11-05T18:22:33+09:00 (ae00455)</a>
+Last modified May 9, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/e1616c3996d71595a2bd4686fa1d5d095d17fd9f>Merge "new rule: gce best practice check (avoid using 172.17.0.0/16)" -- Branch commit log -- commit 8857c91299d5fe3a10d5d008b9827736d0c07c7a Author: gcpdiag team &lt;noreply@google.com> Date: 2022-05-03T17:53:34+09:00 (e1616c3)</a>
 </div>
 </div>
 </main>
