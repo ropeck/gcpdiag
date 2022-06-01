@@ -13,21 +13,29 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>GCS | gcpdiag</title>
-<meta name=description content="Cloud Storage">
-<meta property="og:title" content="GCS">
-<meta property="og:description" content="Cloud Storage">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://gcpdiag.dev/rules/gcs/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="og:site_name" content="gcpdiag">
-<meta itemprop=name content="GCS">
-<meta itemprop=description content="Cloud Storage"><meta name=twitter:card content="summary_large_image">
+<title>bigquery/ERR/2022_001 | gcpdiag</title>
+<meta name=description content="BigQuery jobs not failing due to concurrent DML updates on the same table
+">
+<meta property="og:title" content="bigquery/ERR/2022_001">
+<meta property="og:description" content="BigQuery jobs not failing due to concurrent DML updates on the same table
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://gcpdiag.dev/rules/bigquery/ERR/2022_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
+<meta property="article:modified_time" content="2022-06-01T11:54:23+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta itemprop=name content="bigquery/ERR/2022_001">
+<meta itemprop=description content="BigQuery jobs not failing due to concurrent DML updates on the same table
+">
+<meta itemprop=dateModified content="2022-06-01T11:54:23+00:00">
+<meta itemprop=wordCount content="61"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
-<meta name=twitter:title content="GCS">
-<meta name=twitter:description content="Cloud Storage">
+<meta name=twitter:title content="bigquery/ERR/2022_001">
+<meta name=twitter:description content="BigQuery jobs not failing due to concurrent DML updates on the same table
+">
 <link href=/scss/main.css rel=stylesheet>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 </head>
-<body class=td-section>
+<body class=td-page>
 <header>
 <nav class="js-navbar-scroll navbar navbar-expand navbar-light nav-shadow flex-column flex-md-row td-navbar">
 <a id=gcpdiag-top class=navbar-brand href=/>
@@ -83,13 +91,13 @@
 <label for=m-rulesapigeewarn2021_001-check><a href=/rules/apigee/WARN/2021_001/ title=apigee/WARN/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesapigeewarn2021_001><span>WARN/2021_001</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesbigquery-li>
-<input type=checkbox id=m-rulesbigquery-check>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesbigquery-li>
+<input type=checkbox id=m-rulesbigquery-check checked>
 <label for=m-rulesbigquery-check><a href=/rules/bigquery/ title=BIGQUERY class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesbigquery><span>bigquery</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesbigqueryerr2022_001-li>
-<input type=checkbox id=m-rulesbigqueryerr2022_001-check>
-<label for=m-rulesbigqueryerr2022_001-check><a href=/rules/bigquery/ERR/2022_001/ title=bigquery/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesbigqueryerr2022_001><span>ERR/2022_001</span></a></label>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-rulesbigqueryerr2022_001-li>
+<input type=checkbox id=m-rulesbigqueryerr2022_001-check checked>
+<label for=m-rulesbigqueryerr2022_001-check><a href=/rules/bigquery/ERR/2022_001/ title=bigquery/ERR/2022_001 class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-rulesbigqueryerr2022_001><span class=td-sidebar-nav-active-item>ERR/2022_001</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesbigquerywarn2022_001-li>
 <input type=checkbox id=m-rulesbigquerywarn2022_001-check>
 <label for=m-rulesbigquerywarn2022_001-check><a href=/rules/bigquery/WARN/2022_001/ title=bigquery/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesbigquerywarn2022_001><span>ERR/2022_001</span></a></label>
@@ -248,9 +256,9 @@
 <label for=m-rulesgcfwarn2021_002-check><a href=/rules/gcf/WARN/2021_002/ title=gcf/WARN/2021_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcfwarn2021_002><span>WARN/2021_002</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesgcs-li>
-<input type=checkbox id=m-rulesgcs-check checked>
-<label for=m-rulesgcs-check><a href=/rules/gcs/ title=GCS class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id=m-rulesgcs><span class=td-sidebar-nav-active-item>gcs</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgcs-li>
+<input type=checkbox id=m-rulesgcs-check>
+<label for=m-rulesgcs-check><a href=/rules/gcs/ title=GCS class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgcs><span>gcs</span></a></label>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcsbp2022_001-li>
 <input type=checkbox id=m-rulesgcsbp2022_001-check>
@@ -391,28 +399,41 @@
 </div>
 </aside>
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+<div class=td-toc><nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#description>Description</a></li>
+<li><a href=#remediation>Remediation</a></li>
+<li><a href=#further-information>Further information</a></li>
+</ul>
+</li>
+</ul>
+</nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
-<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/gcs/_index.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=GCS" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
+<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/bigquery/ERR/2022_001.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=bigquery/ERR/2022_001" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
 </div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>GCS</h1>
-<div class=lead>Cloud Storage</div>
+<h1>bigquery/ERR/2022_001</h1>
+<div class=lead>BigQuery jobs not failing due to concurrent DML updates on the same table</div>
 <header class=article-meta>
 </header>
-<div class=section-index>
-<hr class=panel-line>
-<div class=entry>
-<h5>
-<a href=/rules/gcs/BP/2022_001/>gcs/BP/2022_001</a>
-</h5>
-<p>Buckets are using uniform access</p>
-</div>
-</div>
+<p><strong>Product</strong>: <a href=https://cloud.google.com/bigquery>BigQuery</a><br>
+<strong>Rule class</strong>: ERR - Something that is very likely to be wrong</p>
+<h3 id=description>Description</h3>
+<p>Multiple DML queries running concurrently are conflicting with each other.</p>
+<h3 id=remediation>Remediation</h3>
+<p>Consider spacing out the DML operations to a single table enough so that they
+don&rsquo;t overlap, or start another one only after the earlier one is completed.</p>
+<h3 id=further-information>Further information</h3>
+<ul>
+<li><a href=https://cloud.google.com/blog/products/data-analytics/dml-without-limits-now-in-bigquery>Learn how BigQuery handles DML statements</a></li>
+</ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 21, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/0bacecf3f8c2d0f44d86080dde82bf99ba056652>add descriptions for all products (0bacecf)</a>
+Last modified June 1, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/0a93f962ba63e66eea1bc4376200d4a54f2d711a>Merge "new rule:BigQuery jobs not failing due to concurrent DML updates on the same table" -- Branch commit log -- commit 14935e9f98ab3d879896030738bf039d3a4570f1 Author: gcpdiag team &lt;noreply@google.com> Date: 2022-05-26T11:23:36Z (0a93f96)</a>
 </div>
 </div>
 </main>
