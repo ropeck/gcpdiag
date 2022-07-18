@@ -14,23 +14,23 @@
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
 <title>vpc/WARN/2022_001 | gcpdiag</title>
-<meta name=description content="Cross Project Networking Service projects quota is not near the limit.
+<meta name=description content="Per-project quotas are not near the limit.
 ">
 <meta property="og:title" content="vpc/WARN/2022_001">
-<meta property="og:description" content="Cross Project Networking Service projects quota is not near the limit.
+<meta property="og:description" content="Per-project quotas are not near the limit.
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/vpc/WARN/2022_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-06-14T10:48:14+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-07-18T12:21:57+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="vpc/WARN/2022_001">
-<meta itemprop=description content="Cross Project Networking Service projects quota is not near the limit.
+<meta itemprop=description content="Per-project quotas are not near the limit.
 ">
-<meta itemprop=dateModified content="2022-06-14T10:48:14+00:00">
-<meta itemprop=wordCount content="54"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-07-18T12:21:57+00:00">
+<meta itemprop=wordCount content="78"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="vpc/WARN/2022_001">
-<meta name=twitter:description content="Cross Project Networking Service projects quota is not near the limit.
+<meta name=twitter:description content="Per-project quotas are not near the limit.
 ">
 <link href=/scss/main.css rel=stylesheet>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
@@ -474,21 +474,25 @@
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
 <h1>vpc/WARN/2022_001</h1>
-<div class=lead>Cross Project Networking Service projects quota is not near the limit.</div>
+<div class=lead>Per-project quotas are not near the limit.</div>
 <header class=article-meta>
 </header>
-<p><strong>Product</strong>: <a href=https://cloud.google.com/vpc>Virtual Private Cloud (VPC)</a><br>
+<p><strong>Product</strong>: <a href=https://cloud.google.com/docs/quota>Quotas</a><br>
 <strong>Rule class</strong>: WARN - Something that is possibly wrong</p>
 <h3 id=description>Description</h3>
-<p>In a shared VPC, the host project can only share it&rsquo;s VPC with certain amount
-of service projects.</p>
-<p>Rule will start failing if quota usage will be higher then configured threshold (80%).</p>
+<p>Google Cloud uses quotas to restrict how much of a particular shared Google
+Cloud resource that you can use. Each quota represents a specific countable
+resource.</p>
+<p>Project level quota limits the resources you can use in each project, such as
+the number of VPCs you can create.</p>
+<p>Rule will start failing if quota usage will be higher then configured threshold
+(80%).</p>
 <h3 id=further-information>Further information</h3>
 <ul>
-<li><a href=https://cloud.google.com/vpc/docs/quota>Quotas and limits - VPC</a></li>
+<li><a href=https://cloud.google.com/docs/quota>Working with quotas</a></li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified June 14, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/7325ad87314077ade689c1d555a9323c9f142f5d>Merge "new rule: XPN quota under new product VPC" -- Branch commit log -- commit 79ea421ee4854a72ecadbdc29b1924d4e6b44c70 Author: Jingyuan Chen &lt;atomchen@google.com> Date: 2022-06-07T15:44Z (7325ad87)</a>
+Last modified July 18, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/77b541cc39a150926ba75721ec6c2acad9d021c1>Merge "project level quota check, replace WARN/2022/001. fix=237637519" -- Branch commit log -- commit cac33d2ad535386530930fc80fbf77904cc0c978 Author: atomchen &lt;atomchen@google.com> Date: 2022-07-01T10:03:04+01:00 (77b541cc)</a>
 </div>
 </div>
 </main>
