@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/gcf/ERR/2022_002/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-07-29T15:07:29+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-08-05T13:41:45+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gcf/ERR/2022_002">
 <meta itemprop=description content="Cloud Function deployment failure due to Resource Location Constraint.
 ">
-<meta itemprop=dateModified content="2022-07-29T15:07:29+00:00">
-<meta itemprop=wordCount content="685"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-08-05T13:41:45+00:00">
+<meta itemprop=wordCount content="101"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="gcf/ERR/2022_002">
@@ -487,34 +487,9 @@
 <p><strong>Product</strong>: <a href=https://cloud.google.com/functions>Cloud Functions</a><br>
 <strong>Rule class</strong>: ERR - Something that is very likely to be wrong</p>
 <h3 id=description>Description</h3>
-<p>Considering the use of an Organization Policy: Resource Location Restriction inorder to set locations where location-based GCP resources (like Cloud Functions) can be created, there can be 2 scenarios resulting from this:</p>
-<p><strong>Scenario 1</strong> : The Organization Policy: Resource Location Restriction does not allow the region where the Function is being deployed to.</p>
-<p><strong>Scenario 2</strong> : The Organization Policy: Resource Location Restriction allows the region where the Function is being deployed to, but does not allow a multi-region.</p>
-<h3 id=remediation>Remediation</h3>
-<h5 id=scenario-1>Scenario 1:</h5>
-<p>Function is deployed in a region not allowed by the Organization Policy.</p>
+<p>Function is deployed in a region not allowed by the Organization Policy</p>
 <p>There is an Organization Policy in place for your project with a constraint named Resource Location Restriction. This restricts the physical location of the new resource (in your case Cloud Functions) that you are trying to deploy. Thus you are facing the error The request has violated one or more Org Policies. Please refer to the respective violations for more information.</p>
-<p>This can be viewed using the following log filter:</p>
-<pre tabindex=0><code>resource.type=&quot;cloud_function&quot; severity&gt;=ERROR
-protoPayload.methodName=&quot;google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl&quot;
-protoPayload.status.message:&quot;The request has violated one or more Org Policies&quot;
-</code></pre><p>For successful deployment you should include the appropriate multi-region location in the Organization Policy: Resource Location Restriction. For example, if you are deploying in any of the US regions, you should include us-locations. This allows Cloud Build to access the Container Registry storage bucket. Our suggestion for you would be to either allow a broader list of locations/regions in your Resource Location constraint that would permit Cloud Functions deployment in your required region to be built and executed successfully by creating a multi-regional bucket. Otherwise you can temporarily change your Resource Location constraint to allow a multi-region followed by deploying your function and then editing the Organization Policy back to regional restrictions. In either cases, the region where you are deploying your function to should be allowed by the Organization Policy: Resource Location Restriction.</p>
-<h5 id=scenario-2>Scenario 2:</h5>
-<p>Organization Policy allows the region where Cloud Functions is being deployed but does not allow a multi-region</p>
-<p>There is an Organization Policy in place for your project with a constraint named Resource Location Restriction, that is not allowing a multi regional bucket creation needed for function’s deployment. Thus your cloud function deployment is failing with status The Function failed to deploy. Cloud Functions creation is failing with The request has violated one or more Org Policies along with Build failed error. This can be viewed using the following 2 log filters:</p>
-<pre tabindex=0><code>resource.type=&quot;cloud_function&quot; severity&gt;=ERROR
-protoPayload.methodName=&quot;google.cloud.functions.v1.CloudFunctionsService.GenerateUploadUrl&quot;
-protoPayload.status.message:&quot;The request has violated one or more Org Policies&quot;
-</code></pre><pre tabindex=0><code>resource.type=&quot;cloud_function&quot;
-protoPayload.status.message:&quot;Build failed&quot;
-</code></pre><p>The Cloud Functions deployment works by uploading an archive containing your function&rsquo;s source code to a Google Cloud Storage bucket. Once the source code has been uploaded, Cloud Build automatically builds your code into a container image and pushes that image to the Container Registry. Cloud Functions uses that image to create the container that executes your function.</p>
-<p>The Multi-regional bucket is not being created due to the Organization Policy restriction and thus storage bucket creation is failing.This can be viewed using the following log filter:</p>
-<pre tabindex=0><code>resource.type=&quot;gcs_bucket&quot;
-severity&gt;=ERROR
-protoPayload.authorizationInfo.permission=&quot;storage.buckets.create&quot;
-</code></pre><p>This is followed by Cloud Build unable to upload the new Cloud Functions container image to the Container Repository.</p>
-<p>For successful deployment you should include the appropriate multi-region location in the Resource Location Restriction. For example, if you are deploying in any of the US regions, you should include us-locations. This allows Cloud Build to access the Container Registry storage bucket. Our suggestion for you would be to either allow a broader list of locations/regions in your resource location constraint that would permit Cloud Function deployments in your required region to be built and executed successfully by creating a multi-regional bucket. Otherwise you can temporarily change your Resource Location constraint to allow a multi-region followed by deploying your function and then editing the Organization Policy back to regional restrictions.</p>
-<p>You can refer to the section <a href=https://cloud.google.com/functions/docs/troubleshooting#resource-location>Function deployment fails when using Resource Location Constraint organization policy</a> in Cloud Functions Troubleshooting guide for details</p>
+<h3 id=remediation>Remediation</h3>
 <h3 id=further-information>Further information</h3>
 <ul>
 <li><a href=https://cloud.google.com/functions/docs/troubleshooting#resource-location>Troubleshooting Cloud Functions</a></li>
@@ -522,7 +497,7 @@ protoPayload.authorizationInfo.permission=&quot;storage.buckets.create&quot;
 <li><a href=https://cloud.google.com/resource-manager/docs/organization-policy/defining-locations>Restricting Resource Locations</a></li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified July 29, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/fe2abc88a1638961ce2e2fdcae59af49fb2aef82>new rule: orgpolicy violation (fe2abc88)</a>
+Last modified August 5, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/5faa3c859628ce40bbac978befc8f463f908ec18>Merge "update to rule orgpolicy_violation to remove the un-approved website content. No code changes done" -- Branch commit log -- commit fedcbf54de819ee3a7fbed9e51d2f424c40ef39a Author: bhargavak &lt;bhagi@google.com> Date: 2022-08-05T13:33:28Z (5faa3c85)</a>
 </div>
 </div>
 </main>

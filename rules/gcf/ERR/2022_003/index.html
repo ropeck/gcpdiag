@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/gcf/ERR/2022_003/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-08-03T02:00:52+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-08-05T13:20:16+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gcf/ERR/2022_003">
 <meta itemprop=description content="Function invocation interrupted due to memory limit exceeded.
 ">
-<meta itemprop=dateModified content="2022-08-03T02:00:52+00:00">
-<meta itemprop=wordCount content="458"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-08-05T13:20:16+00:00">
+<meta itemprop=wordCount content="77"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="gcf/ERR/2022_003">
@@ -489,78 +489,12 @@
 <h3 id=description>Description</h3>
 <p>When configuring Cloud Functions, you can choose how much memory is allocated to run the function. By default, the memory allocated to each function is 256 MB. You should ensure that the function executes within the amount of memory specified otherwise they will encounter an Out-of-Memory (OOM) error which will interrupt their function invocation.</p>
 <h3 id=remediation>Remediation</h3>
-<p>This will vary depending on runtime, code logic and the use-case(s) employed by you.</p>
-<ol>
-<li>Inspect your peak memory utilisation (P99) using Metrics Explorer by configuring a graph showing <a href=https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions>user memory bytes</a> for the specific function. Please set the <a href=https://cloud.google.com/monitoring/charts/metrics-selector#groupby-option>Aggregator field</a> to 99th percentile to display P99 data. Look for patterns and trends where peak memory utilisation is (consistently) showing peak memory usage near the memory allocated limit If so, we encourage you to always refer to <a href=https://cloud.google.com/functions/docs/bestpractices/tips#correctness>best practices</a> to ensure they are inline with our recommendations. You should review the function code to check for any memory leaks as per following:</li>
-</ol>
+<h3 id=further-information>Further information</h3>
 <ul>
-<li>Always delete temporary files
-<ul>
-<li>check if you are using any temporary files in your code as they sometimes persist between invocations. As per this <a href=https://cloud.google.com/functions/docs/bestpractices/tips#always_delete_temporary_files>Always delete temporary files</a> files that are written consume memory available for the function and sometimes persist between function invocations. Failing to explicitly delete these files may eventually lead to an OOM error and a subsequent cold start.</li>
-</ul>
-</li>
-<li>Check resources in local and global scope
-<ul>
-<li>If possible, do not store any objects or variables in global memory space without deallocating them as they will persist in the server instance indefinitely or until the instance is shut down. If implemented, customers should also do lazy initialisation of global variables to ensure resources are only allocated if/when their function executes.</li>
-</ul>
-</li>
-<li>Increase code verbosity
-<ul>
-<li>Increase code verbosity by writing sufficient debugging <a href=https://cloud.google.com/functions/docs/monitoring/logging>logs</a> to determine causes of high memory usage in their code.</li>
-</ul>
-</li>
-<li>Implement memory profiling
-<ul>
-<li>Instrument your application by implementing memory profiling for individual functions to better understand their memory usage. For example, if you are deploying Python runtime you may consider using open-source libraries such as tracemalloc or guppy3.</li>
-</ul>
-</li>
-</ul>
-<ol start=2>
-<li>If there is a pressing need and as a last resort option, you are adviced to allocate (higher) memory in accordance with analysis from inspecting their P99 memory usage using the below command:</li>
-</ol>
-<pre tabindex=0><code>gcloud functions deploy [*FUNCTION_NAME*] --memory=[*MEMORY*]
-</code></pre><h3 id=further-information>Further information</h3>
-<h4 id=symptoms>Symptoms</h4>
-<ul>
-<li><strong>Error</strong>: <code>Function invocation was interrupted. Error: memory limit exceeded.</code></li>
-</ul>
-<p>To view this error in Cloud Logging, please refer to the following query:</p>
-<pre tabindex=0><code>resource.type = &quot;cloud_function&quot;
-resource.labels.function_name = &quot;[*FUNCTION_NAME*]&quot;
-severity&gt;=DEFAULT
-textPayload: &quot;Error: memory limit exceeded.&quot;
-</code></pre><h4 id=references>References:</h4>
-<ul>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/concepts/exec#memory>Cloud Functions execution environment</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/monitoring/api/metrics_gcp#gcp-cloudfunctions>Metrics from Cloud Functions</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/monitoring/charts/metrics-selector#groupby-option>Group time series</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/bestpractices/tips#correctness>best practices</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/bestpractices/tips#always_delete_temporary_files>Always delete temporary files</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/blog/topics/developers-practitioners/avoiding-gcf-anti-patterns-part-2-how-reuse-cloud-function-instances-future-invocations>Avoiding GCF anti-patterns</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/bestpractices/tips#do_lazy_initialization_of_global_variables>Do lazy initialization of global variables</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/samples/functions-tips-lazy-globals>Lazy globals</a></p>
-</li>
-<li>
-<p><a href=https://cloud.google.com/functions/docs/monitoring/logging>Logs</a></p>
-</li>
+<li><a href=https://cloud.google.com/functions/docs/concepts/exec#memory>Cloud Functions execution environment</a></li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified August 3, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/b06d1fd3477d2964c0d0a2cce25f64c85b7778d7>Merge "new rule: gcf error memory limit exceeded" -- Branch commit log -- commit cc8106de769741736fe83d9d471f326d161f5178 Author: bhargavak &lt;bhagi@google.com> Date: 2022-07-23T13:43:16Z (b06d1fd3)</a>
+Last modified August 5, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/c9304bc29e7d046f3435e46e2e20b360d40c59b6>removing un-approved website content from gcf rule error memory limit exceeded. No code changes done (c9304bc2)</a>
 </div>
 </div>
 </main>
