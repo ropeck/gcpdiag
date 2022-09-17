@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/docs/development/architecture/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-09T10:13:23+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-09-17T17:09:55+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gcpdiag Architecture">
 <meta itemprop=description content="gcpdiag internal code architecture.
 ">
-<meta itemprop=dateModified content="2022-02-09T10:13:23+00:00">
-<meta itemprop=wordCount content="1715"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-09-17T17:09:55+00:00">
+<meta itemprop=wordCount content="1716"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="gcpdiag Architecture">
@@ -277,6 +277,8 @@ functionality, and that the API calls are cached.</p>
   <span style=color:#000>clusters</span> <span style=color:#ce5c00;font-weight:700>=</span> <span style=color:#000>gke</span><span style=color:#ce5c00;font-weight:700>.</span><span style=color:#000>get_clusters</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>context</span><span style=color:#000;font-weight:700>)</span>
   <span style=color:#204a87;font-weight:700>if</span> <span style=color:#204a87;font-weight:700>not</span> <span style=color:#000>clusters</span><span style=color:#000;font-weight:700>:</span>
     <span style=color:#000>report</span><span style=color:#ce5c00;font-weight:700>.</span><span style=color:#000>add_skipped</span><span style=color:#000;font-weight:700>(</span><span style=color:#204a87;font-weight:700>None</span><span style=color:#000;font-weight:700>,</span> <span style=color:#4e9a06>&#39;no clusters found&#39;</span><span style=color:#000;font-weight:700>)</span>
+    <span style=color:#204a87;font-weight:700>return</span>
+
   <span style=color:#204a87;font-weight:700>for</span> <span style=color:#000>_</span><span style=color:#000;font-weight:700>,</span> <span style=color:#000>c</span> <span style=color:#204a87;font-weight:700>in</span> <span style=color:#204a87>sorted</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>clusters</span><span style=color:#ce5c00;font-weight:700>.</span><span style=color:#000>items</span><span style=color:#000;font-weight:700>()):</span>
     <span style=color:#204a87;font-weight:700>if</span> <span style=color:#204a87;font-weight:700>not</span> <span style=color:#000>c</span><span style=color:#ce5c00;font-weight:700>.</span><span style=color:#000>has_logging_enabled</span><span style=color:#000;font-weight:700>():</span>
       <span style=color:#000>report</span><span style=color:#ce5c00;font-weight:700>.</span><span style=color:#000>add_skipped</span><span style=color:#000;font-weight:700>(</span><span style=color:#000>c</span><span style=color:#000;font-weight:700>,</span> <span style=color:#4e9a06>&#39;logging disabled&#39;</span><span style=color:#000;font-weight:700>)</span>
@@ -375,7 +377,7 @@ gcloud command-line) or with a key file for a service account.</p>
 function is used to retrieve the API interface and also takes care of doing any
 necessary authentication step.</p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 9, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dab2d479b401a8081b27bc97ee4de19a8c526886>Merge "Unify test project naming" -- Branch commit log -- commit bde1226b453e6376715eae5ea5d37ae1c35e64a5 Author: Dawid Malinowski &lt;dawidmalina@google.com> Date: 2022-02-08T22:54:37+01:00 (dab2d479)</a>
+Last modified September 17, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/62f97edfbf2a61df88433ed5841c7e64cbce4d37>Merge "Some GKE rules appear to not report OK/FAIL as expected" -- Branch commit log -- commit 53908d229e4694715dd9ba2651af28cb0d6c7ffa Author: Dawid Malinowski &lt;dawidmalina@google.com> Date: 2022-09-15T15:22:14+02:00 (62f97edf)</a>
 </div>
 </div>
 </main>
