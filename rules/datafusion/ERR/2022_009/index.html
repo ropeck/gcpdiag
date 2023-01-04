@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/datafusion/ERR/2022_009/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-11-17T14:21:16+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-12-18T17:15:01+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="datafusion/ERR/2022_009">
 <meta itemprop=description content="Cloud Dataproc Service Account has a Cloud Data Fusion Runner role
 ">
-<meta itemprop=dateModified content="2022-11-17T14:21:16+00:00">
-<meta itemprop=wordCount content="100"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-12-18T17:15:01+00:00">
+<meta itemprop=wordCount content="172"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="datafusion/ERR/2022_009">
@@ -604,6 +604,9 @@
 <p>Granted to the Dataproc service account so that Dataproc is authorized to communicate the pipeline runtime information such as status, logs, and metrics to the Cloud Data Fusion services running in the tenant project.
 The service account used by the Dataproc needs to be granted with the roles/datafusion.runner role. The role is needed in order for the job in Dataproc be able to talk back to Data Fusion</p>
 <h3 id=remediation>Remediation</h3>
+<p>Add an IAM policy binding to a Cloud Dataproc service account by specifying a role. The Service Account cannot be created without a role. For example, this can be done using the <a href=https://cloud.google.com/data-fusion/docs/how-to/granting-service-account-permission#grant_roles_to_service_accounts>GCP Console</a> or by running the following gcloud tool command :</p>
+<pre tabindex=0><code>gcloud projects add-iam-policy-binding PROJECT_ID --member='serviceAccount:SERVICE_ACCOUNT' --role='roles/datafusion.runner'
+</code></pre><p>where SERVICE_ACCOUNT could be either Compute Engine default service account or the App Engine default service account or instead a user-specified service account.</p>
 <h3 id=further-information>Further information</h3>
 <ul>
 <li>
@@ -617,7 +620,7 @@ The service account used by the Dataproc needs to be granted with the roles/data
 </li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified November 17, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/dc6dfd58738e4397d6e35062f7efb2ef0d9c1b0b>new-rule check if Cloud DataProc Service Account fetched from a Cloud DataFusion instance has datafusion.runner role fix=244411025 Change-Id: I031ab5a52ec6a0aaf239efe8507c8433c22b811a (dc6dfd58)</a>
+Last modified December 18, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/f1611aa9c471976ecc3fb66229fc31d85d824fe0>Check if a Cloud Dataproc SA has a Cloud Data Fusion runner role at the project level. Fixes b/244411025 for more info. (f1611aa9)</a>
 </div>
 </div>
 </main>
