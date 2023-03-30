@@ -13,30 +13,25 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>gcpdiag Privacy Policy | gcpdiag</title>
-<meta name=description content="gcpdiag tool
-Data collected via public APIs
-gcpdiag is a command-line tool that uses credentials provided by you (via oauth,
-service account key, or …">
-<meta property="og:title" content="gcpdiag Privacy Policy">
-<meta property="og:description" content="gcpdiag tool Data collected via public APIs gcpdiag is a command-line tool that uses credentials provided by you (via oauth, service account key, or application default credentials) to access your data in Google Cloud Platform via public APIs.
-The collected data is never stored or transmitted anywhere except on the environment where you run it:
-  gcpdiag caches data (credentials and certain API call results) under $HOME/.cache/gcpdiag or $HOME/.cache/gcpdiag-dockerized, which you can delete at any time.">
+<title>bigquery/WARN/2023_001 | gcpdiag</title>
+<meta name=description content="BigQuery query job does not time out during execution
+">
+<meta property="og:title" content="bigquery/WARN/2023_001">
+<meta property="og:description" content="BigQuery query job does not time out during execution
+">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://gcpdiag.dev/privacy/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content>
-<meta property="article:modified_time" content="2022-03-30T12:07:43+00:00"><meta property="og:site_name" content="gcpdiag">
-<meta itemprop=name content="gcpdiag Privacy Policy">
-<meta itemprop=description content="gcpdiag tool Data collected via public APIs gcpdiag is a command-line tool that uses credentials provided by you (via oauth, service account key, or application default credentials) to access your data in Google Cloud Platform via public APIs.
-The collected data is never stored or transmitted anywhere except on the environment where you run it:
-  gcpdiag caches data (credentials and certain API call results) under $HOME/.cache/gcpdiag or $HOME/.cache/gcpdiag-dockerized, which you can delete at any time.">
-<meta itemprop=dateModified content="2022-03-30T12:07:43+00:00">
-<meta itemprop=wordCount content="163"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta property="og:url" content="https://gcpdiag.dev/rules/bigquery/WARN/2023_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
+<meta property="article:modified_time" content="2023-03-30T17:54:25+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta itemprop=name content="bigquery/WARN/2023_001">
+<meta itemprop=description content="BigQuery query job does not time out during execution
+">
+<meta itemprop=dateModified content="2023-03-30T17:54:25+00:00">
+<meta itemprop=wordCount content="154"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
-<meta name=twitter:title content="gcpdiag Privacy Policy">
-<meta name=twitter:description content="gcpdiag tool Data collected via public APIs gcpdiag is a command-line tool that uses credentials provided by you (via oauth, service account key, or application default credentials) to access your data in Google Cloud Platform via public APIs.
-The collected data is never stored or transmitted anywhere except on the environment where you run it:
-  gcpdiag caches data (credentials and certain API call results) under $HOME/.cache/gcpdiag or $HOME/.cache/gcpdiag-dockerized, which you can delete at any time.">
+<meta name=twitter:title content="bigquery/WARN/2023_001">
+<meta name=twitter:description content="BigQuery query job does not time out during execution
+">
 <link href=/scss/main.css rel=stylesheet>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
 </head>
@@ -52,7 +47,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 <a class=nav-link href=/docs/><span>Documentation</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
-<a class=nav-link href=/rules/><span>Rules</span></a>
+<a class="nav-link active" href=/rules/><span class=active>Rules</span></a>
 </li>
 <li class="nav-item mr-4 mb-2 mb-lg-0">
 <a class=nav-link href=https://github.com/GoogleCloudPlatform/gcpdiag><span>GitHub</span></a>
@@ -78,47 +73,13 @@ The collected data is never stored or transmitted anywhere except on the environ
 <div id=content-desktop></div>
 <nav class="collapse td-sidebar-nav foldable-nav" id=td-section-nav>
 <ul class="td-sidebar-nav__section pr-md-3 ul-0">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m--li>
-<a href=/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-><span>gcpdiag</span></a>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rules-li>
+<a href=/rules/ title="Lint Rules" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id=m-rules><span>Rules</span></a>
 <ul class=ul-1>
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docs-li>
-<input type=checkbox id=m-docs-check>
-<label for=m-docs-check><a href=/docs/ class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docs><span>Documentation</span></a></label>
-<ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsrunning-li>
-<input type=checkbox id=m-docsrunning-check>
-<label for=m-docsrunning-check><a href=/docs/running/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsrunning><span>Running gcpdiag</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsusage-li>
-<input type=checkbox id=m-docsusage-check>
-<label for=m-docsusage-check><a href=/docs/usage/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsusage><span>Usage information</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsauthentication-li>
-<input type=checkbox id=m-docsauthentication-check>
-<label for=m-docsauthentication-check><a href=/docs/authentication/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsauthentication><span>Authentication</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-docsdevelopment-li>
-<input type=checkbox id=m-docsdevelopment-check>
-<label for=m-docsdevelopment-check><a href=/docs/development/ title="Development Guides" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-docsdevelopment><span>Development</span></a></label>
-<ul class="ul-3 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdevelopmentenvironment-li>
-<input type=checkbox id=m-docsdevelopmentenvironment-check>
-<label for=m-docsdevelopmentenvironment-check><a href=/docs/development/environment/ title="Development Environment" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdevelopmentenvironment><span>Dev Environment</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-docsdevelopmentarchitecture-li>
-<input type=checkbox id=m-docsdevelopmentarchitecture-check>
-<label for=m-docsdevelopmentarchitecture-check><a href=/docs/development/architecture/ title="gcpdiag Architecture" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-docsdevelopmentarchitecture><span>Architecture</span></a></label>
-</li>
-</ul>
-</li>
-</ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-privacy-li>
-<input type=checkbox id=m-privacy-check checked>
-<label for=m-privacy-check><a href=/privacy/ title="gcpdiag Privacy Policy" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-privacy><span class=td-sidebar-nav-active-item>Privacy Policy</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rules-li>
-<input type=checkbox id=m-rules-check>
-<label for=m-rules-check><a href=/rules/ title="Lint Rules" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rules><span>Rules</span></a></label>
-<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesapigee-li>
 <input type=checkbox id=m-rulesapigee-check>
 <label for=m-rulesapigee-check><a href=/rules/apigee/ title=APIGEE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesapigee><span>apigee</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesapigeeerr2022_001-li>
 <input type=checkbox id=m-rulesapigeeerr2022_001-check>
 <label for=m-rulesapigeeerr2022_001-check><a href=/rules/apigee/ERR/2022_001/ title=apigee/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesapigeeerr2022_001><span>ERR/2022_001</span></a></label>
@@ -139,10 +100,10 @@ The collected data is never stored or transmitted anywhere except on the environ
 <label for=m-rulesapigeewarn2022_002-check><a href=/rules/apigee/WARN/2022_002/ title=apigee/WARN/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesapigeewarn2022_002><span>WARN/2022_002</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesbigquery-li>
-<input type=checkbox id=m-rulesbigquery-check>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesbigquery-li>
+<input type=checkbox id=m-rulesbigquery-check checked>
 <label for=m-rulesbigquery-check><a href=/rules/bigquery/ title=BIGQUERY class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesbigquery><span>bigquery</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesbigqueryerr2022_001-li>
 <input type=checkbox id=m-rulesbigqueryerr2022_001-check>
 <label for=m-rulesbigqueryerr2022_001-check><a href=/rules/bigquery/ERR/2022_001/ title=bigquery/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesbigqueryerr2022_001><span>ERR/2022_001</span></a></label>
@@ -167,15 +128,15 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesbigquerywarn2022_004-li>
 <input type=checkbox id=m-rulesbigquerywarn2022_004-check>
 <label for=m-rulesbigquerywarn2022_004-check><a href=/rules/bigquery/WARN/2022_004/ title=bigquery/WARN/2022_004 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesbigquerywarn2022_004><span>WARN/2022_004</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesbigquerywarn2023_001-li>
-<input type=checkbox id=m-rulesbigquerywarn2023_001-check>
-<label for=m-rulesbigquerywarn2023_001-check><a href=/rules/bigquery/WARN/2023_001/ title=bigquery/WARN/2023_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesbigquerywarn2023_001><span>WARN/2023_001</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-rulesbigquerywarn2023_001-li>
+<input type=checkbox id=m-rulesbigquerywarn2023_001-check checked>
+<label for=m-rulesbigquerywarn2023_001-check><a href=/rules/bigquery/WARN/2023_001/ title=bigquery/WARN/2023_001 class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-rulesbigquerywarn2023_001><span class=td-sidebar-nav-active-item>WARN/2023_001</span></a></label>
 </li>
 </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulescloudrun-li>
 <input type=checkbox id=m-rulescloudrun-check>
 <label for=m-rulescloudrun-check><a href=/rules/cloudrun/ title=CLOUDRUN class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulescloudrun><span>cloudrun</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulescloudrunerr2022_001-li>
 <input type=checkbox id=m-rulescloudrunerr2022_001-check>
 <label for=m-rulescloudrunerr2022_001-check><a href=/rules/cloudrun/ERR/2022_001/ title=cloudrun/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescloudrunerr2022_001><span>ERR/2022_001</span></a></label>
@@ -184,7 +145,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulescloudsql-li>
 <input type=checkbox id=m-rulescloudsql-check>
 <label for=m-rulescloudsql-check><a href=/rules/cloudsql/ title=CLOUDSQL class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulescloudsql><span>cloudsql</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulescloudsqlwarn2022_001-li>
 <input type=checkbox id=m-rulescloudsqlwarn2022_001-check>
 <label for=m-rulescloudsqlwarn2022_001-check><a href=/rules/cloudsql/WARN/2022_001/ title=cloudsql/WARN/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescloudsqlwarn2022_001><span>WARN/2022_001</span></a></label>
@@ -193,7 +154,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulescomposer-li>
 <input type=checkbox id=m-rulescomposer-check>
 <label for=m-rulescomposer-check><a href=/rules/composer/ title=COMPOSER class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulescomposer><span>composer</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulescomposererr2022_001-li>
 <input type=checkbox id=m-rulescomposererr2022_001-check>
 <label for=m-rulescomposererr2022_001-check><a href=/rules/composer/ERR/2022_001/ title=composer/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescomposererr2022_001><span>ERR/2022_001</span></a></label>
@@ -217,7 +178,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesdatafusion-li>
 <input type=checkbox id=m-rulesdatafusion-check>
 <label for=m-rulesdatafusion-check><a href=/rules/datafusion/ title=DATAFUSION class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesdatafusion><span>datafusion</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesdatafusionerr2022_001-li>
 <input type=checkbox id=m-rulesdatafusionerr2022_001-check>
 <label for=m-rulesdatafusionerr2022_001-check><a href=/rules/datafusion/ERR/2022_001/ title=datafusion/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesdatafusionerr2022_001><span>ERR/2022_001</span></a></label>
@@ -256,7 +217,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesdataproc-li>
 <input type=checkbox id=m-rulesdataproc-check>
 <label for=m-rulesdataproc-check><a href=/rules/dataproc/ title=DATAPROC class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesdataproc><span>dataproc</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesdataprocbp2021_001-li>
 <input type=checkbox id=m-rulesdataprocbp2021_001-check>
 <label for=m-rulesdataprocbp2021_001-check><a href=/rules/dataproc/BP/2021_001/ title=dataproc/BP/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesdataprocbp2021_001><span>BP/2021_001</span></a></label>
@@ -307,7 +268,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgae-li>
 <input type=checkbox id=m-rulesgae-check>
 <label for=m-rulesgae-check><a href=/rules/gae/ title=GAE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgae><span>gae</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgaeerr2023_001-li>
 <input type=checkbox id=m-rulesgaeerr2023_001-check>
 <label for=m-rulesgaeerr2023_001-check><a href=/rules/gae/ERR/2023_001/ title=gae/ERR/2023_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgaeerr2023_001><span>ERR/2023_001</span></a></label>
@@ -325,7 +286,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgcb-li>
 <input type=checkbox id=m-rulesgcb-check>
 <label for=m-rulesgcb-check><a href=/rules/gcb/ title=GCB class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgcb><span>gcb</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcberr2022_001-li>
 <input type=checkbox id=m-rulesgcberr2022_001-check>
 <label for=m-rulesgcberr2022_001-check><a href=/rules/gcb/ERR/2022_001/ title=gcb/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcberr2022_001><span>ERR/2022_001</span></a></label>
@@ -343,7 +304,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgce-li>
 <input type=checkbox id=m-rulesgce-check>
 <label for=m-rulesgce-check><a href=/rules/gce/ title=GCE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgce><span>gce</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcebp2021_001-li>
 <input type=checkbox id=m-rulesgcebp2021_001-check>
 <label for=m-rulesgcebp2021_001-check><a href=/rules/gce/BP/2021_001/ title=gce/BP/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcebp2021_001><span>BP/2021_001</span></a></label>
@@ -442,7 +403,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgcf-li>
 <input type=checkbox id=m-rulesgcf-check>
 <label for=m-rulesgcf-check><a href=/rules/gcf/ title=GCF class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgcf><span>gcf</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcferr2022_002-li>
 <input type=checkbox id=m-rulesgcferr2022_002-check>
 <label for=m-rulesgcferr2022_002-check><a href=/rules/gcf/ERR/2022_002/ title=gcf/ERR/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcferr2022_002><span>ERR/2022_002</span></a></label>
@@ -463,7 +424,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgcs-li>
 <input type=checkbox id=m-rulesgcs-check>
 <label for=m-rulesgcs-check><a href=/rules/gcs/ title=GCS class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgcs><span>gcs</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcsbp2022_001-li>
 <input type=checkbox id=m-rulesgcsbp2022_001-check>
 <label for=m-rulesgcsbp2022_001-check><a href=/rules/gcs/BP/2022_001/ title=gcs/BP/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcsbp2022_001><span>BP/2022_001</span></a></label>
@@ -472,7 +433,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgke-li>
 <input type=checkbox id=m-rulesgke-check>
 <label for=m-rulesgke-check><a href=/rules/gke/ title=GKE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgke><span>gke</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgkebp2021_001-li>
 <input type=checkbox id=m-rulesgkebp2021_001-check>
 <label for=m-rulesgkebp2021_001-check><a href=/rules/gke/BP/2021_001/ title=gke/BP/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgkebp2021_001><span>BP/2021_001</span></a></label>
@@ -628,7 +589,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesiam-li>
 <input type=checkbox id=m-rulesiam-check>
 <label for=m-rulesiam-check><a href=/rules/iam/ title=IAM class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesiam><span>iam</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesiamsec2021_001-li>
 <input type=checkbox id=m-rulesiamsec2021_001-check>
 <label for=m-rulesiamsec2021_001-check><a href=/rules/iam/SEC/2021_001/ title=iam/SEC/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesiamsec2021_001><span>SEC/2021_001</span></a></label>
@@ -637,7 +598,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-ruleslb-li>
 <input type=checkbox id=m-ruleslb-check>
 <label for=m-ruleslb-check><a href=/rules/lb/ title=LB class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-ruleslb><span>lb</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-ruleslbbp2022_001-li>
 <input type=checkbox id=m-ruleslbbp2022_001-check>
 <label for=m-ruleslbbp2022_001-check><a href=/rules/lb/BP/2022_001/ title=lb/BP/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-ruleslbbp2022_001><span>BP/2022_001</span></a></label>
@@ -646,7 +607,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesnotebooks-li>
 <input type=checkbox id=m-rulesnotebooks-check>
 <label for=m-rulesnotebooks-check><a href=/rules/notebooks/ title=NOTEBOOKS class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesnotebooks><span>notebooks</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesnotebookserr2023_001-li>
 <input type=checkbox id=m-rulesnotebookserr2023_001-check>
 <label for=m-rulesnotebookserr2023_001-check><a href=/rules/notebooks/ERR/2023_001/ title=notebooks/ERR/2023_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesnotebookserr2023_001><span>ERR/2023_001</span></a></label>
@@ -655,7 +616,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulestpu-li>
 <input type=checkbox id=m-rulestpu-check>
 <label for=m-rulestpu-check><a href=/rules/tpu/ title=TPU class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulestpu><span>tpu</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulestpuwarn2022_001-li>
 <input type=checkbox id=m-rulestpuwarn2022_001-check>
 <label for=m-rulestpuwarn2022_001-check><a href=/rules/tpu/WARN/2022_001/ title=tpu/WARN/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulestpuwarn2022_001><span>WARN/2022_001</span></a></label>
@@ -664,7 +625,7 @@ The collected data is never stored or transmitted anywhere except on the environ
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesvpc-li>
 <input type=checkbox id=m-rulesvpc-check>
 <label for=m-rulesvpc-check><a href=/rules/vpc/ title=VPC class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesvpc><span>vpc</span></a></label>
-<ul class="ul-3 foldable">
+<ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesvpcbp2022_001-li>
 <input type=checkbox id=m-rulesvpcbp2022_001-check>
 <label for=m-rulesvpcbp2022_001-check><a href=/rules/vpc/BP/2022_001/ title=vpc/BP/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesvpcbp2022_001><span>BP/2022_001</span></a></label>
@@ -678,11 +639,6 @@ The collected data is never stored or transmitted anywhere except on the environ
 </ul>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-search-li>
-<input type=checkbox id=m-search-check>
-<label for=m-search-check><a href=/search/ class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-search><span>Search Results</span></a></label>
-</li>
-</ul>
 </li>
 </ul>
 </nav>
@@ -691,56 +647,47 @@ The collected data is never stored or transmitted anywhere except on the environ
 <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
 <div class=td-toc><nav id=TableOfContents>
 <ul>
-<li><a href=#gcpdiag-tool>gcpdiag tool</a>
+<li>
 <ul>
-<li><a href=#data-collected-via-public-apis>Data collected via public APIs</a></li>
-<li><a href=#user-agent>User-agent</a></li>
+<li><a href=#description>Description</a></li>
+<li><a href=#remediation>Remediation</a></li>
+<li><a href=#further-information>Further information</a></li>
 </ul>
 </li>
-<li><a href=#website>Website</a></li>
 </ul>
 </nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
-<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/privacy.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=gcpdiag%20Privacy%20Policy" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
+<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/bigquery/WARN/2023_001.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=bigquery/WARN/2023_001" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
 </div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>gcpdiag Privacy Policy</h1>
+<h1>bigquery/WARN/2023_001</h1>
+<div class=lead>BigQuery query job does not time out during execution</div>
 <header class=article-meta>
 </header>
-<h2 id=gcpdiag-tool>gcpdiag tool</h2>
-<h3 id=data-collected-via-public-apis>Data collected via public APIs</h3>
-<p>gcpdiag is a command-line tool that uses credentials provided by you (via oauth,
-service account key, or application default credentials) to access your data in
-Google Cloud Platform via public APIs.</p>
-<p>The collected data is never stored or transmitted anywhere except on the
-environment where you run it:</p>
+<p><strong>Product</strong>: <a href=https://cloud.google.com/bigquery>BigQuery</a><br>
+<strong>Rule class</strong>: WARN - Something that is possibly wrong</p>
+<h3 id=description>Description</h3>
+<p>A BigQuery query or multi-statement query job can execute for up to six hours, after which it times out and fails.</p>
+<p>You can search in the Logs Explorer for such jobs with the logging query:</p>
+<pre tabindex=0><code>resource.type=&quot;bigquery_resource&quot;
+severity=ERROR
+protoPayload.methodName=&quot;jobservice.jobcompleted&quot;
+protoPayload.status.message:&quot;Operation timed out after 6.0 hours&quot;
+</code></pre><h3 id=remediation>Remediation</h3>
 <ul>
-<li>
-<p>gcpdiag caches data (credentials and certain API call results) under
-<code>$HOME/.cache/gcpdiag</code> or <code>$HOME/.cache/gcpdiag-dockerized</code>, which
-you can delete at any time.</p>
-</li>
-<li>
-<p>gcpdiag will display findings to stdout/stderr (console) or to local files
-you specify.</p>
-</li>
+<li>If the exact query is being run for the first time or has never succeeded before, optimize the query being run by following <a href=https://cloud.google.com/bigquery/docs/best-practices-performance-compute>documented best practices for BigQuery jobs</a>.</li>
+<li>If the same query used to succeed before, make sure that there were enough <a href=https://cloud.google.com/bigquery/docs/slots>computational resources (slots)</a> available for the job to run and check whether the amount of data being queried has changed significantly since the last successful run. You can reach out to <a href=https://cloud.google.com/support>Support</a> if you are not able to determine why the job fails.</li>
 </ul>
-<p>In other words: the data collected by gcpdiag always stays with you.</p>
-<h3 id=user-agent>User-agent</h3>
-<p>The gcpdiag command-line tool sets a specific User-agent string for the GCP API
-calls, which makes it possible to identify them as originating from the gcpdiag
-tool. The <a href=https://cloud.google.com/terms/cloud-privacy-notice>Google Cloud Privacy
-Notice</a> describes how
-Google collects and processes personal information in relation to Google Cloud
-Platform and Google’s other Cloud Services.</p>
-<h2 id=website>Website</h2>
-<p>For the website <a href=http://gcpdiag.dev>http://gcpdiag.dev</a>, the privacy policy at
-<a href=https://policies.google.com/privacy>https://policies.google.com/privacy</a> applies.</p>
+<h3 id=further-information>Further information</h3>
+<ul>
+<li><a href=https://cloud.google.com/bigquery/docs/best-practices-performance-overview>Optimizing query performance</a></li>
+<li><a href=https://cloud.google.com/bigquery/quotas#query_jobs>Quotas and Limits - Query Jobs</a></li>
+</ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified March 30, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/70a5295ecfe67571f25a3a8de4843e31d65c75ad>Merge "update privacy policy" -- Branch commit log -- commit e0eda9bff6de2ac8879ce2a3a19de6b882916dbd Author: David Schweikert &lt;dwes@google.com> Date: 2022-02-18T10:46:54+01:00 (70a5295e)</a>
+Last modified March 30, 2023: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/72e5780d6bfcce80c20a52973ecfd7eb70cc9c18>Merge "new rule: bigquery query job does not time out during execution" -- Branch commit log -- commit 1689a414e0eb723b31d7b930cc51afb9a6ed3041 Author: Issam Kalliath &lt;kissam@google.com> Date: 2023-03-19T13:23:54Z (72e5780d)</a>
 </div>
 </div>
 </main>
