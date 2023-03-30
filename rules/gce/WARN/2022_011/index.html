@@ -21,12 +21,12 @@
 ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gcpdiag.dev/rules/gce/WARN/2022_011/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2023-01-03T16:09:46+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta property="article:modified_time" content="2022-09-16T20:22:00+00:00"><meta property="og:site_name" content="gcpdiag">
 <meta itemprop=name content="gce/WARN/2022_011">
 <meta itemprop=description content="GCE VM service account is valid
 ">
-<meta itemprop=dateModified content="2023-01-03T16:09:46+00:00">
-<meta itemprop=wordCount content="47"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2022-09-16T20:22:00+00:00">
+<meta itemprop=wordCount content="71"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta name=twitter:title content="gce/WARN/2022_011">
@@ -671,12 +671,16 @@
 authentication issues for gcloud components and dependant apps.
 Restore/enable the service account use by the VM.</p>
 <h3 id=remediation>Remediation</h3>
+<ul>
+<li>Replace attached service account with a new service account or re-enable the account.
+Service account deleted less than 30 days ago can be <a href=https://cloud.google.com/iam/docs/service-accounts-delete-undelete#undeleting>restored</a>.</li>
+</ul>
 <h3 id=further-information>Further information</h3>
 <ul>
 <li><a href=https://cloud.google.com/iam/docs/creating-managing-service-accounts#disabling>https://cloud.google.com/iam/docs/creating-managing-service-accounts#disabling</a></li>
 </ul>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified January 3, 2023: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/791048d32c77d1e5de1fa4aba6aa1baec2227c43>Merge "new GCE Rule: check for valid service account" -- Branch commit log -- commit 619b29c29e23ffcd99457385dd85d926b954a6af Author: Kwesi Graham &lt;kwesigraham@google.com> Date: 2022-11-11T22:31:11Z (791048d3)</a>
+Last modified September 16, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/1531abf5a1c16b3f6e62199e3f7b0f8543df731c>Enhancement to iam.py: extract project id from email when fetching service accounts (1531abf5)</a>
 </div>
 </div>
 </main>
