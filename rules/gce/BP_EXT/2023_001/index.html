@@ -13,24 +13,24 @@
 <link rel=icon type=image/png href=/favicons/android-96x96.png sizes=96x96>
 <link rel=icon type=image/png href=/favicons/android-144x144.png sizes=144x144>
 <link rel=icon type=image/png href=/favicons/android-192x192.png sizes=192x192>
-<title>composer/ERR/2022_001 | gcpdiag</title>
-<meta name=description content="Composer Service Agent permissions
+<title>gce/BP_EXT/2023_001 | gcpdiag</title>
+<meta name=description content="Compute Engine scopes best practices
 ">
-<meta property="og:title" content="composer/ERR/2022_001">
-<meta property="og:description" content="Composer Service Agent permissions
+<meta property="og:title" content="gce/BP_EXT/2023_001">
+<meta property="og:description" content="Compute Engine scopes best practices
 ">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://gcpdiag.dev/rules/composer/ERR/2022_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
-<meta property="article:modified_time" content="2022-02-17T17:57:38+00:00"><meta property="og:site_name" content="gcpdiag">
-<meta itemprop=name content="composer/ERR/2022_001">
-<meta itemprop=description content="Composer Service Agent permissions
+<meta property="og:url" content="https://gcpdiag.dev/rules/gce/BP_EXT/2023_001/"><meta property="og:image" content="https://gcpdiag.dev/images/website-preview.jpg"><meta property="article:section" content="rules">
+<meta property="article:modified_time" content="2023-03-31T11:29:58+00:00"><meta property="og:site_name" content="gcpdiag">
+<meta itemprop=name content="gce/BP_EXT/2023_001">
+<meta itemprop=description content="Compute Engine scopes best practices
 ">
-<meta itemprop=dateModified content="2022-02-17T17:57:38+00:00">
-<meta itemprop=wordCount content="78"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
+<meta itemprop=dateModified content="2023-03-31T11:29:58+00:00">
+<meta itemprop=wordCount content="104"><meta itemprop=image content="https://gcpdiag.dev/images/website-preview.jpg">
 <meta itemprop=keywords content><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://gcpdiag.dev/images/website-preview.jpg">
-<meta name=twitter:title content="composer/ERR/2022_001">
-<meta name=twitter:description content="Composer Service Agent permissions
+<meta name=twitter:title content="gce/BP_EXT/2023_001">
+<meta name=twitter:description content="Compute Engine scopes best practices
 ">
 <link href=/scss/main.css rel=stylesheet>
 <script src=https://code.jquery.com/jquery-3.5.1.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script>
@@ -151,13 +151,13 @@
 <label for=m-rulescloudsqlwarn2022_001-check><a href=/rules/cloudsql/WARN/2022_001/ title=cloudsql/WARN/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescloudsqlwarn2022_001><span>WARN/2022_001</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulescomposer-li>
-<input type=checkbox id=m-rulescomposer-check checked>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulescomposer-li>
+<input type=checkbox id=m-rulescomposer-check>
 <label for=m-rulescomposer-check><a href=/rules/composer/ title=COMPOSER class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulescomposer><span>composer</span></a></label>
 <ul class="ul-2 foldable">
-<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-rulescomposererr2022_001-li>
-<input type=checkbox id=m-rulescomposererr2022_001-check checked>
-<label for=m-rulescomposererr2022_001-check><a href=/rules/composer/ERR/2022_001/ title=composer/ERR/2022_001 class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-rulescomposererr2022_001><span class=td-sidebar-nav-active-item>ERR/2022_001</span></a></label>
+<li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulescomposererr2022_001-li>
+<input type=checkbox id=m-rulescomposererr2022_001-check>
+<label for=m-rulescomposererr2022_001-check><a href=/rules/composer/ERR/2022_001/ title=composer/ERR/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescomposererr2022_001><span>ERR/2022_001</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulescomposererr2022_002-li>
 <input type=checkbox id=m-rulescomposererr2022_002-check>
 <label for=m-rulescomposererr2022_002-check><a href=/rules/composer/ERR/2022_002/ title=composer/ERR/2022_002 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulescomposererr2022_002><span>ERR/2022_002</span></a></label>
@@ -301,8 +301,8 @@
 <label for=m-rulesgcberr2022_004-check><a href=/rules/gcb/ERR/2022_004/ title=gcb/ERR/2022_004 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcberr2022_004><span>ERR/2022_004</span></a></label>
 </li>
 </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id=m-rulesgce-li>
-<input type=checkbox id=m-rulesgce-check>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id=m-rulesgce-li>
+<input type=checkbox id=m-rulesgce-check checked>
 <label for=m-rulesgce-check><a href=/rules/gce/ title=GCE class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id=m-rulesgce><span>gce</span></a></label>
 <ul class="ul-2 foldable">
 <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcebp2021_001-li>
@@ -323,9 +323,9 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcebp_ext2022_001-li>
 <input type=checkbox id=m-rulesgcebp_ext2022_001-check>
 <label for=m-rulesgcebp_ext2022_001-check><a href=/rules/gce/BP_EXT/2022_001/ title=gce/BP_EXT/2022_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcebp_ext2022_001><span>BP_EXT/2022_001</span></a></label>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgcebp_ext2023_001-li>
-<input type=checkbox id=m-rulesgcebp_ext2023_001-check>
-<label for=m-rulesgcebp_ext2023_001-check><a href=/rules/gce/BP_EXT/2023_001/ title=gce/BP_EXT/2023_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgcebp_ext2023_001><span>BP_EXT/2023_001</span></a></label>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id=m-rulesgcebp_ext2023_001-li>
+<input type=checkbox id=m-rulesgcebp_ext2023_001-check checked>
+<label for=m-rulesgcebp_ext2023_001-check><a href=/rules/gce/BP_EXT/2023_001/ title=gce/BP_EXT/2023_001 class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id=m-rulesgcebp_ext2023_001><span class=td-sidebar-nav-active-item>BP_EXT/2023_001</span></a></label>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id=m-rulesgceerr2021_001-li>
 <input type=checkbox id=m-rulesgceerr2021_001-check>
 <label for=m-rulesgceerr2021_001-check><a href=/rules/gce/ERR/2021_001/ title=gce/ERR/2021_001 class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id=m-rulesgceerr2021_001><span>ERR/2021_001</span></a></label>
@@ -660,35 +660,29 @@
 </ul>
 </nav></div>
 <div class="td-page-meta ml-0 pb-1 pt-0 mb-0">
-<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/composer/ERR/2022_001.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=composer/ERR/2022_001" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
+<a href=https://github.com/GoogleCloudPlatform/gcpdiag/edit/main/website/content/en/rules/gce/BP_EXT/2023_001.md target=_blank><i class="fa fa-edit fa-fw"></i> Edit this page</a>
+<a href="https://github.com/GoogleCloudPlatform/gcpdiag/issues/new?title=gce/BP_EXT/2023_001" target=_blank class=mb-2><i class="fab fa-github fa-fw"></i> Create issue</a>
 </div>
 </aside>
 <main class="col-12 col-md-9 col-xl-8 pl-md-5" role=main>
 <div class=td-content>
-<h1>composer/ERR/2022_001</h1>
-<div class=lead>Composer Service Agent permissions</div>
+<h1>gce/BP_EXT/2023_001</h1>
+<div class=lead>Compute Engine scopes best practices</div>
 <header class=article-meta>
 </header>
-<p><strong>Product</strong>: <a href=https://cloud.google.com/composer>Cloud Composer</a><br>
-<strong>Rule class</strong>: ERR - Something that is very likely to be wrong</p>
+<p><strong>Product</strong>: <a href=https://cloud.google.com/compute>Compute Engine</a><br>
+<strong>Rule class</strong>: BP_EXT - (Extended) Best practice, opinionated recommendation</p>
 <h3 id=description>Description</h3>
-<p>Cloud Composer uses a Google-managed service account, which is called Cloud
-Composer Service Agent, to provision resources in the project.</p>
-<p><code>composer.serviceAgent</code> role is automatically assigned to this account during
-Composer API activation and shouldn&rsquo;t be revoked.</p>
+<p>Google recommends enabling a custom service account with very fine-grained permissions
+and a very restricted access scope so that you can ensure that access scopes to connect
+to or from the VM is limited and implements a security-in-depth strategy where multiple
+layers of security are used for holistic protection.</p>
 <h3 id=remediation>Remediation</h3>
-<p>Ensure that you&rsquo;ve the following binding in the IAM policy for the project:</p>
-<ul>
-<li>Principal: <code>service-PROJECT_NUMBER@cloudcomposer-accounts.iam.gserviceaccount.com</code></li>
-<li>Role: <code>roles/composer.serviceAgent</code></li>
-</ul>
+<p>Please consider following the principle of least previlige and avoid using defaults service account for production applications. It is recommended to use a custom service account with restricted permissions that are required to your use case.</p>
 <h3 id=further-information>Further information</h3>
-<ul>
-<li><a href=https://cloud.google.com/composer/docs/how-to/access-control#about-composer-sa>About Cloud Composer Service Agent account</a></li>
-</ul>
+<p><a href=https://cloud.google.com/compute/docs/access/service-accounts#scopes_best_practice>Scopes Best Practices</a></p>
 <div class="text-muted mt-5 pt-3 border-top">
-Last modified February 17, 2022: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/eaa77fdab1314efb46041e116643576ae2666748>Merge "Composer: Check service accounts and agents roles" -- Branch commit log -- commit 692fcdeace02c9429b2d943ff21fe118be371916 Author: Kirill Zhalnin &lt;kzhalnin@google.com> Date: 2022-02-15T11:55:22Z (eaa77fda)</a>
+Last modified March 31, 2023: <a href=https://github.com/GoogleCloudPlatform/gcpdiag/commit/0c2c5a30ceee860cead940da69edd053d59f6d9f>Merge "new rule: gce bp for access scope" -- Branch commit log -- commit 2a282dd3fb03ae26eefd18b04ea2ab690f57bb15 Author: gcpdiag team &lt;noreply@google.com> Date: 2023-03-13T10:52:53Z (0c2c5a30)</a>
 </div>
 </div>
 </main>
