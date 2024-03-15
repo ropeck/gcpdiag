@@ -26,8 +26,8 @@ jobs:
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
-      if: github.repository == 'GoogleCloudPlatform/gcpdiag' && github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./website/public
-        cname: gcpdiag.dev
+        cname: gcpdiag.doo
