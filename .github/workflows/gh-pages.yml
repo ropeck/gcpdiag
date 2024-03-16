@@ -25,7 +25,7 @@ jobs:
           hugo build --themesDir=/themes --baseUrl=https://gcpdiag.dev/ --minify --enableGitInfo"
 
     - name: Deploy
-      uses: peaceiris/actions-gh-pages
+      uses: peaceiris/actions-gh-pages@main
       if: github.ref == 'refs/heads/main'
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
